@@ -22,7 +22,7 @@ class LegalMate:
             try:
                 self.llm = Ollama(
                     model="llama3.2:3b",
-                    temperature=0.3,
+                    temperature=0.5,
                     timeout=120  # Increase timeout for larger responses
                 )
                 # Test the LLM
