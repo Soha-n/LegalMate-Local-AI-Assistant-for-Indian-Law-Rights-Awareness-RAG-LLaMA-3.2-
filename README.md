@@ -1,27 +1,60 @@
-# LegalMate-Local-AI-Assistant-for-Indian-Law-Rights-Awareness-RAG-LLaMA-3.2-
-⚖️ LegalMate is a local AI assistant for Indian law and rights awareness, built using Ollama, LangChain, ChromaDB, and LLaMA 3.2 (3B). Runs fully offline — no API or internet required.
-LegalMate is an offline AI-powered chatbot that answers legal questions related to the Indian Constitution, fundamental rights, duties, and legal remedies.
+# LegalMate - Local Legal Assistant
 
-Powered by a Retrieval-Augmented Generation (RAG) pipeline using LLaMA 3.2 (3B) via Ollama and ChromaDB, LegalMate runs entirely on your local machine — no API keys or internet required.
+LegalMate is a Retrieval-Augmented Generation (RAG) chatbot that helps answer legal questions related to the Indian Constitution, fundamental rights, duties, laws, and legal remedies. It runs entirely on your local machine without requiring any external APIs.
 
-💼 Use Cases:
+## Prerequisites
 
-Learn about your constitutional rights
+1. Python 3.8 or higher
+2. Ollama installed and running locally
+3. The llama2:3b model pulled in Ollama
 
-Get insights on fundamental duties & legal protections
+## Setup
 
-Explore Indian law topics in natural language
+1. Install Ollama from [https://ollama.ai](https://ollama.ai)
 
-🛠️ Tech Stack:
+2. Pull the required model:
 
-🧠 LLM: LLaMA 3.2 (3B) via Ollama
+```bash
+ollama pull llama2:3b
+```
 
-🔍 RAG Pipeline: LangChain + Chroma Vector DB
+3. Install Python dependencies:
 
-📄 Documents: Indian Constitution PDF
+```bash
+pip install -r requirements.txt
+```
 
-🧱 Embeddings: HuggingFace Sentence Transformers
+4. Download the Indian Constitution PDF:
 
-🖥️ Streamlit
+```bash
+# Create a data directory
+mkdir data
+# Download the constitution PDF (you'll need to manually download this)
+# Place it in the data directory as 'indian_constitution.pdf'
+```
 
-⚡ Fully Local | 🧠 No Fine-Tuning | 🔐 100% Privacy | 🇮🇳 Focused on Indian Law
+## Running the Application
+
+1. Start the Streamlit interface:
+
+```bash
+streamlit run main.py
+```
+
+2. Open your browser and navigate to the URL shown in the terminal (typically http://localhost:8501)
+
+## Features
+
+- Local RAG-based legal assistant
+- Uses the Indian Constitution as knowledge base
+- No external API dependencies
+- Simple and intuitive interface
+- Fallback to base model when context is insufficient
+
+## Project Structure
+
+- `load_documents.py`: Document loading and processing
+- `vector.py`: Vector store setup and management
+- `rag_chain.py`: RAG chain implementation
+- `main.py`: Main application and interface
+- `data/`: Directory containing the Indian Constitution PDF
